@@ -50,7 +50,7 @@ txt_Position='''DF - Defensores /
                     LW - Ala izquierda /
                     RW - Ala derecha /
                     AM - Centrocampistas ofensivos''' 
-fechaAct='📅 Fecha de actualización: 15/01/2023'
+fechaAct='📅 Fecha de actualización: 16/01/2023'
 
 def GetSimilarPlayers(PlayerName, numPlayers, corr_matrix):
     
