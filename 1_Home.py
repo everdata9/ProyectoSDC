@@ -91,17 +91,26 @@ def GetMexicanData():
 
     df_mex_detalles=df_mex_detalles[claves]
     df_mex_detalles.fillna(0,inplace=True)
-
+   
+    ##indexNames = df_mex_detalles[(df_mex_detalles['Player'] == 'Luis Félix')].index
+    #df_mex_detalles = df_mex_detalles.drop(df_mex_detalles[(df_mex_detalles['Player'] == 'Luis Félix')].index)
+    ##df_mex_detalles.drop(indexNames , inplace=True)
+    ##st.write(len(df_mex_detalles))
+    #st.write(df_mex_detalles[(df_mex_detalles['Player'] == 'Emiliano García')])
+    ##st.write(df_mex_detalles.loc[df_mex_detalles.duplicated(subset=['Player','Age'])])
     #######################################################################
-
+    
     for index, row in df_mex_detalles.loc[df_mex_detalles.duplicated(subset=['Player','Age'])].iterrows():
+        
         df_EquipoActual = df_mex_detalles.iloc[[index]]
         jugador = df_EquipoActual['Player'][index]
         age = df_EquipoActual['Age'][index]
         squad = df_EquipoActual['Squad'][index]
         df_EquipoAnterior = df_mex_detalles[(df_mex_detalles['Player'] == jugador) & 
-                                (df_mex_detalles['Age'] == age) & 
-                                (df_mex_detalles['Squad'] != squad)]
+                                (df_mex_detalles['Age'] == age) ]
+                                #& 
+                                #(df_mex_detalles['Squad'] != squad)]
+        
 
         df_mex_detalles.loc[index, 'PJ'] = df_EquipoActual['PJ'][index] + df_EquipoAnterior['PJ'].values[0] 
         df_mex_detalles.loc[index, 'Min'] = df_EquipoActual['Min'][index] + df_EquipoAnterior['Min'].values[0]
@@ -705,8 +714,9 @@ elif selected == "Jugadores Similares":
         age = df_EquipoActual['Age'][index]
         squad = df_EquipoActual['Squad'][index]
         df_EquipoAnterior = df_mex_detalles[(df_mex_detalles['Player'] == jugador) & 
-                                (df_mex_detalles['Age'] == age) & 
-                                (df_mex_detalles['Squad'] != squad)]
+                                (df_mex_detalles['Age'] == age) ]
+                                #& 
+                                #(df_mex_detalles['Squad'] != squad)]
 
 
         df_mex_detalles.loc[index, 'PJ'] = df_EquipoActual['PJ'][index] + df_EquipoAnterior['PJ'].values[0]
