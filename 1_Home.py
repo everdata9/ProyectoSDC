@@ -171,7 +171,7 @@ with st.sidebar:
 if selected == "Inicio":
     
     st.title('Bienvenido a @everdata9 📈')
-    st.markdown('<div style="text-align: justify; border: 2px solid gray; padding: 10px; font-size: 20px;"><i>@everdata9 es una herramienta de análisis pública y gratuita que pone a disposición técnicas de analítica de datos, machine learning e inteligencia artificial (IA) para los DELANTEROS profesionales de la Liga MX (Primera División de México)</i></div>', unsafe_allow_html=True)  
+    st.markdown('<div style="text-align: justify; border: 2px solid gray; padding: 10px; font-size: 20px;"><i>@everdata9 es una herramienta de análisis pública y gratuita que pone a disposición técnicas de analítica de datos, machine learning e inteligencia artificial (IA) para facilitar el proceso de captación de talento del fútbol profesional de la Liga MX (Primera División de México)</i></div>', unsafe_allow_html=True)  
     st.write('')  
     st.write('')  
     col1, col2, col3, col4, col5 = st.columns(5)
